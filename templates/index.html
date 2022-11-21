@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+ 
+ 
+{% block title %} Home {% endblock %}
+ 
+{% block body %}
+ 
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+ 
+            <div class="jumbotron p-3">
+ 
+                <h3>News
+                <button type="button"  class="btn btn-success float-right" data-toggle="modal" data-target="#mymodal">Category</button>
+                <button type="button"  class="btn btn-success float-right" data-toggle="modal" data-target="#mymodal1">Custom</button>
+                <button type="button"  class="btn btn-success float-right" data-toggle="modal" data-target="#mymodal2">Location</button>
+                <a href = "/news/" ><button type="button"  class="btn btn-success float-right" data-toggle="modal">Trending</button></a>
+
+                </h3>
+
+ 
+ 
+                <table class="table table-hover table-dark">
+ 
+                    <tr>
+ 
+                        <th><h4>Title</h4></th>
+                        <th><h4>Link</h4></th>
+
+                    </tr>
+ 
+ 
+                   {% for news in newslist %}
+                    <tr>
+                        <td><h5>{{news.title.text}}</h5></td>
+                        <td><a href="{{news.link.text}}" class="btn btn-primary">></a></td>
+ 
+                    </tr>
+ 
+ 
+                   {% endfor %}
+ 
+ 
+                </table>
+  
+
+<div id="mymodal1" class="modal fade" role="dialog">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+
+            <h4 class="modal-title">Custom Search</h4>
+        </div>
+        <div class="modal-body">
+<!-- form action here -->
+            <form action="/news/" method="POST"> 
+
+
+            <div class="form-group">
+
+                <label>Keyword</label>
+                <input type="text" class="form-control" name="keyword" required="1">
+
+            </div>
+
+            <div class="form-group">
+
+
+                <button class="btn btn-primary" type="submit">Search</button>
+
+
+            </div>
+
+
+            </form>
+
+
+        </div>
+
+
+        <div class="modal-footer">
+
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>                 
+
+<div id="mymodal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+    
+                <h4 class="modal-title">Location</h4>
+            </div>
+            <div class="modal-body">
+    <!-- form action here -->
+                <form action="/news/" method="POST"> 
+    
+    
+                <div class="form-group">
+    
+                    <label>Location</label>
+                    <input type="text" class="form-control" name="location" required="1">
+    
+                </div>
+    
+                <div class="form-group">
+    
+    
+                    <button class="btn btn-primary" type="submit">Search</button>
+    
+    
+                </div>
+    
+    
+                </form>
+    
+    
+            </div>
+    
+    
+            <div class="modal-footer">
+    
+    
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    
+    
+            </div>
+
+        </div>
+    </div>  
+</div>
+ 
+<div id="mymodal" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+ 
+            <h4 class="modal-title">By category</h4>
+         </div>
+         <div class="modal-body">
+ <!-- form action here -->
+            <form action="/news/" method="POST"> 
+ 
+ 
+               <div class="form-group">
+ 
+                  <label>Category</label>
+                  <!-- <input type="text" class="form-control" name="name" required="1"> -->
+                  <select class="form-control" name="category" required ="1">
+                    <option value="WORLD">WORLD</option>
+                    <option value="SPORTS">SPORTS</option>
+                    <option value="NATION">NATION</option>
+                    <option value="BUSINESS">BUSINESS</option>
+                    <option value="TECHNOLOGY">TECHNOLOGY</option>
+                    <option value="SCIENCE">SCIENCE</option>
+                    <option value="HEALTH">HEALTH</option>
+                    <option value="ENTERTAINMENT">ENTERTAINMENT</option>
+                  </select>
+ 
+               </div>
+ 
+               <div class="form-group">
+ 
+ 
+                  <button class="btn btn-primary" type="submit">update preferences</button>
+ 
+ 
+               </div>
+ 
+ 
+            </form>
+ 
+ 
+         </div>
+ 
+ 
+         <div class="modal-footer">
+ 
+ 
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ 
+ 
+         </div>
+ 
+ 
+      </div>
+ 
+ 
+   </div>
+ 
+ 
+</div>
+ 
+ 
+ 
+ 
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+</div>
+
+
+
+{% endblock %}

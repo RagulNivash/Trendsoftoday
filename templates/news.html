@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+ 
+ 
+{% block title %} Home {% endblock %}
+
+ 
+ 
+{% block body %}
+ <!--from here  -->
+<div class="container">
+    <div class="row">
+        <div class="col md-12"> 
+                <table class="table table-hover table-dark">
+ 
+                    <tr>
+ 
+                        <th><h3>Title</h3></th>
+                        <th><h3>Link</h3></th>
+
+                    </tr>
+ 
+ 
+                   {% for news in newslist %}
+                    <tr>
+                        <td><h5>{{news.title.text}}</h5></td>
+                        <td><a href="{{news.link.text}}" class="btn btn-primary">Open Article</a></td>
+ 
+                    </tr>
+ 
+ 
+                   {% endfor %}
+ 
+ 
+                </table>
+ 
+ 
+            </div>
+        </div>
+    </div>
+ 
+</div> 
+<!-- till here -->
+ 
+{% endblock %}
