@@ -31,7 +31,7 @@ app.register_blueprint(blueprint, url_prefix="/login")
 #SqlAlchemy Database Configuration With Mysql
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crud'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zxnqgwtywmpvux:d65157ab862a640d87d6d22ac52ce74650ab7d645f7b6f6d2c0b31e8d9aaaaf7@ec2-54-86-214-124.compute-1.amazonaws.com:5432/d91jbe6sjv3dfc'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://njuewjvzppdupu:f8f2bba71f70cdec5a59c362af855ff70964e74effdf3b6916d93f2f3a55244e@ec2-54-86-214-124.compute-1.amazonaws.com:5432/d5b9cngengdc9a'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
  
  
