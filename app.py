@@ -31,7 +31,7 @@ app.register_blueprint(blueprint, url_prefix="/login")
 #SqlAlchemy Database Configuration With Mysql
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crud'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://spdycygtnurafi:c3a7622b6147567e3decab2b5ad5f4324858f7d5bccb6bdb323e1775ce156c1f@ec2-52-21-207-163.compute-1.amazonaws.com:5432/d49t7177ug8vt3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zxnqgwtywmpvux:d65157ab862a640d87d6d22ac52ce74650ab7d645f7b6f6d2c0b31e8d9aaaaf7@ec2-54-86-214-124.compute-1.amazonaws.com:5432/d91jbe6sjv3dfc'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
  
  
@@ -184,5 +184,12 @@ def googlelogin():
  
  
 #run flask app
+#if __name__ == "__main__":
+#   app.run(debug=True)
+
+
+ ###############################
+
+port=os.environ.get("PORT",5000)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False,host="0.0.0.0",port=port)
